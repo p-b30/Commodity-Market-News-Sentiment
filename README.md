@@ -3,8 +3,8 @@
 ## Overview
 This project analyzes commodity market news, performs sentiment analysis, and visualizes how news sentiment correlates with commodity prices (e.g., crude oil).
 <p align="center">
-  <img src="images/pic1.png" alt="Image 1" width="400" /> <br>
-  <img src="images/pic2.png" alt="Image 2" width="400" />
+  <img src="images/pic1.png" alt="Image 1" width="600" /> <br>
+  <img src="images/pic2.png" alt="Image 2" width="600" />
 </p>
 
 
