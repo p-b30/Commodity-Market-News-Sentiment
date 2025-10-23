@@ -7,6 +7,13 @@ This project analyzes commodity market news, performs sentiment analysis, and vi
   <img src="images/pic2.png" alt="Image 2" width="600" />
 </p>
 
+<p align="center">
+  <img src="images/pic1.png" alt="Image 1" width="600" />
+  <span style="display:inline-block; width:2px; height:300px; background-color:gray; vertical-align:middle; margin:0 20px;"></span>
+  <img src="images/pic2.png" alt="Image 2" width="600" />
+</p>
+
+
 
 ## Features
 - Scrapes latest market news.
