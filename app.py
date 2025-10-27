@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Streamlit app configuration
+
 st.set_page_config(page_title="Commodity Market Sentiment", layout="wide")
 
-# Custom CSS for UI colors
+
 
 st.markdown("""
     <style>
@@ -73,18 +73,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-# title
 st.title("Commodity Market News Sentiment Visualization")
 
 
-
-
-
-# File uploader
 uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
 
-# Load data
+
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.success("File loaded successfully!")
@@ -92,11 +86,9 @@ else:
     st.info("Using default sample data.")
     df = pd.read_csv("data/merged_data.csv")
 
-# Convert Date to datetime
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 df = df.dropna(subset=['Date'])
 
-# Ensure numeric columns
 df['Close'] = pd.to_numeric(df['Close'], errors='coerce')
 for col in ['Positive', 'Negative', 'Neutral']:
     if col in df.columns:
@@ -104,7 +96,6 @@ for col in ['Positive', 'Negative', 'Neutral']:
 
 df = df.sort_values(by='Date')
 
-# Show dataframe
 st.markdown("<h2><span class='glow-icon'>🔍</span> Data Preview</h2>", unsafe_allow_html=True)
 
 
@@ -112,7 +103,6 @@ st.markdown("<h2><span class='glow-icon'>🔍</span> Data Preview</h2>", unsafe_
 st.dataframe(df)
 
 
-# Plot
 st.markdown("<h2><span class='glow-icon'>📈</span> Visualization</h2>", unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(14,6))
@@ -131,8 +121,6 @@ plt.ylabel("Value")
 plt.legend()
 plt.tight_layout()
 st.pyplot(fig)
-
-
 
 
 st.download_button(
